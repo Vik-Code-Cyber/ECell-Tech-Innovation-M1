@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>E-Cell</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">Ecell</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Core Member</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+
+            <div id="home" class="section active-section">
+                <h1><br><span>Enterpreneurship Cell</span><br>VIPS-TC</h1>
+                <p class="para">Turning Today's Ideas into Tomorrow's Ventures.</p>
+                <div class="form">
+                    <h2>Login Here</h2>
+                    <input type="email" name="email" placeholder="Enter Your Email">
+                    <input type="password" name="password" placeholder="Enter Your Password">
+                    <button class="btn"><a href='#'>Login</a></button>
+                    <p class="link">Don't have an account?<br>
+                    <a href="#">Sign up</a></p>
+                    <p class="liw">Login with</p>
+                    <div class="icons">
+                        <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-google"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-linkedin"></ion-icon></a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="about" class="section">
+                <h1>About Us</h1>
+                <p class="para">Whether you're a student with a brilliant idea, an aspiring entrepreneur seeking guidance, or a seasoned professional looking to share your expertise, E-Cell VIPS is the perfect platform for VIPSians.Stay updated on the latest industry trends , connect with fellow entrepreneurs, and access exclusive resources to fuel your entrepreneurial endeavors.Don't miss out on this opportunity to be part of a vibrant community dedicated to fostering innovation and empowering future leaders! Follow us today for updates, events, and insights that will elevate your entrepreneurial journey.</p>
+            </div>
+
+
+            <div id="core-member" class="section">
+                <h1>Core Members</h1>
+                <p class="para">Meet the dedicated team behind E-Cell VIPS-TC.</p>
+
+                <div class="member-list">
+                    <p class="para">President: [Name]</p>
+                    <p class="para">Vice President: [Name]</p>
+                    <p class="para">Secretary: [Name]</p>
+                </div>
+            </div>
+
+
+            <div id="events" class="section">
+                <h1>Upcoming Events</h1>
+                <p class="para">Stay tuned for our upcoming workshops, hackathons, and speaker sessions.</p>
+                <ul>
+                    <li class="para">Oblivion Annual E-Summit</li>
+                    <li class="para">VIPS Startup Challenge</li>
+                </ul>
+            </div>
+
+
+            <div id="contact" class="section">
+                <h1>Contact Us</h1>
+                <p class="para">Get in touch with us for collaborations and queries.</p>
+                <p class="para">Email: ecell@vips.edu</p>
+                <p class="para">Instagram: https://www.instagram.com/ecell.vips/</p>
+            </div>
+
+            <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active-section');
+            });
+
+
+            const selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.classList.add('active-section');
+            }
+        }
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('.menu ul li a');
+            links.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const text = link.textContent.trim().toLowerCase().replace(' ', '-');
+                    
+
+                    let sectionId = 'home';
+                    if (text === 'about') sectionId = 'about';
+                    else if (text === 'core-member') sectionId = 'core-member';
+                    else if (text === 'events') sectionId = 'events';
+                    else if (text === 'contact') sectionId = 'contact';
+                    
+                    showSection(sectionId);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
